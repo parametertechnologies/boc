@@ -25,6 +25,11 @@ gem "figaro"
 # User authentication
 gem "devise", :github => 'plataformatec/devise', :branch => 'master'
 
+# Styling
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'font-awesome-rails', '~> 4.3'
+gem 'simple_form'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

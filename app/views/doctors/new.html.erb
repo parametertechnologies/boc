@@ -1,0 +1,8 @@
+<h1>New Doctor registration</h1>
+<%= simple_form_for(@doctor) do |f| %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :speciality %>
+  <%= f.input :contact_phone %>
+  <%= f.submit "Register", class: "btn-primary" %>
+<% end %>

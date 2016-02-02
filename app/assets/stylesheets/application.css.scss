@@ -43,15 +43,21 @@ a.new, a.edit, a.delete, a.list {
 
 }
 
-//   &:before {
-//     @extend .fa-trash;
-//   }
-// }
-//
-// a.list {
-//   @extend .btn-primary;
-//
-//   &:before {
-//     @extend .fa-list;
-//   }
-// }
+a.new {
+  @extend .btn-success;
+
+}
+
+a.edit {
+  @extend .btn-primary;
+
+}
+
+a.delete {
+  @extend .btn-danger;
+
+}
+
+a.list {
+  @extend .btn-primary;
+}

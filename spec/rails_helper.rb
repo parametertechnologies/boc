@@ -53,6 +53,10 @@ RSpec.configure do |config|
   # RSpec helper methods, allows create(:doctor) vs FactoryGirl.create(:doctor)
   config.include FactoryGirl::Syntax::Methods
 
+  # Warden session management
+  config.include Warden::Test::Helpers, type: :feature
+  config.after(type: :feature) { Warden.test_reset!}
+
   # Filter lines from Rails gems in backtraces.
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:

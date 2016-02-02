@@ -4,3 +4,15 @@
     <li><%= link_to "Register as new doctor", new_doctor_path, class: "new" %></li>
   </ul>
 </header>
+
+
+<div id="doctors">
+  <% @doctors.each do |doctor| %>
+      <h2><%= link_to doctor.last_name, doctor_path(doctor) %> </h2>
+      <div id="doctor">
+        <%= doctor.full_name %></br>
+        <%= doctor.speciality %></br>
+        <%= doctor.contact_phone %></br>
+      </div>
+  <% end %>
+</div>

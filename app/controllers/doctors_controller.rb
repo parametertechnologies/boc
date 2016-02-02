@@ -1,6 +1,6 @@
 class DoctorsController < ApplicationController
   def index
-    @doctors = Doctor.all
+    @doctors = Doctor.all.order(:last_name)
   end
 
   def show

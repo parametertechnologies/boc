@@ -8,6 +8,13 @@
   * rspec
   * rails s
 
+### Google maps
+
+  * Using https://github.com/laserlemon/figaro for app configuration
+  ** To run locally must have a 'config/application.yml'; with the following:
+    ```ruby
+    google_js_api_key: "AIzaSyAAEQWftcE3JxCc1M6tx0odTN6vplqg5Jw"
+    ```
 
 
 ## MVP features

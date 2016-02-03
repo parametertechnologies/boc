@@ -1,0 +1,9 @@
+<header>
+  <h1>Find a Doctor nearby</h1>
+  <ul class="actions">
+    <li><%= link_to "Register as new patient", new_patient_path, class: "new" %></li>
+  </ul>
+</header>
+
+
+<div id="map" data-patient_gps="<%= @patient_gps %>" data-doctors_gps="<%= @doctors_gps %>"></div>

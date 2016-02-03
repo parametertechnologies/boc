@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.feature "Doctors can register with the site" do
   before do
-    visit "/"
+    visit doctors_path
     click_link "Register as new doctor"
   end
   scenario "with valid attributes" do

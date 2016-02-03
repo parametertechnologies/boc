@@ -8,8 +8,8 @@ RSpec.feature "Users can view a list of doctors" do
       create(:doctor, last_name: "White")
     ]
   end
-  scenario "when visting the home page" do
-    visit "/"
+  scenario "when visting the doctors listing page" do
+    visit doctors_path
     expect(page).to have_content "Doctors"
     expect(page).to have_content "Smith"
     expect(page).to have_content "Jones"

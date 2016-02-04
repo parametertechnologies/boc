@@ -11,7 +11,7 @@
 ### Google maps
 
   * Using https://github.com/laserlemon/figaro for app configuration
-  
+
   ** To run locally must have a 'config/application.yml'; with the following:
     ```ruby
     google_js_api_key: "AIzaSyAAEQWftcE3JxCc1M6tx0odTN6vplqg5Jw"
@@ -42,7 +42,7 @@
     * Uber model - MVP
   * Rating a doctors - MVP
   * Viewing account - MVP
-  * Search for doctor's in area - MVP
+  * [Search for doctor's in area] (https://github.com/parametertechnologies/boc/issues/3) - MVP 
 3. Admin view
   * Batch doctor registration
 

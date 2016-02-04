@@ -9,6 +9,27 @@
 
 
 ## User Data ##
-unless User.exists? email: "patient@boc.com"
-  User.create! email: "patient@boc.com", password: "password"
+user = unless User.exists? email: "patient@boc.com"
+         User.create! email: "patient@boc.com", password: "password"
+       end
+
+unless Patient.exists? first_name: "Kim"
+  Patient.create! first_name: "Kim",
+    last_name: "Smith",
+    contact_phone: "928-277-7779",
+    user: user
+end
+
+unless Patient.exists? first_name: "John"
+  Patient.create! first_name: "John",
+    last_name: "Smith",
+    contact_phone: "928-277-7779",
+    user: user
+end
+
+unless Patient.exists? first_name: "Kate"
+  Patient.create! first_name: "Kate",
+    last_name: "Smith",
+    contact_phone: "928-277-7779",
+    user: user
 end

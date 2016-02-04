@@ -1,7 +1,9 @@
 <header>
   <h1>Find a Doctor nearby</h1>
   <ul class="actions">
-    <li><%= link_to "Register as new patient", new_patient_path, class: "new" %></li>
+    <% if user_signed_in? %>
+      <li><%= link_to "Register as new patient", new_patient_path, class: "new" %></li>
+    <% end %>
   </ul>
 </header>
 

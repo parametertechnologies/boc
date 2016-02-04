@@ -16,6 +16,7 @@ class PatientsController < ApplicationController
 
   def create
     @patient = Patient.new(patient_params)
+    @patient.user = current_user
 
     if @patient.save
       flash[:notice] = 'Patient registered.'

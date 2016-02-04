@@ -11,7 +11,7 @@
 
     <script src="https://maps.googleapis.com/maps/api/js?key=<%=Rails.configuration.x.google_js_api_key%>&callback=initMap"
           async defer></script>
-          
+
   </head>
 
   <body>
@@ -42,6 +42,9 @@
             </li>
             <% end %>
             <% if user_signed_in? %>
+            <li class="<%= "active" if current_page?("/profile")  %>">
+              <%= link_to "Profile", profile_path %>
+            </li>
               <div class="navbar-right">
                 <p class="navbar-text">
                   Signed in as <%= current_user.email %>

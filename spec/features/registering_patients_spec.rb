@@ -1,7 +1,9 @@
 require "rails_helper"
 
-RSpec.feature "Patients can register with the site" do
+RSpec.feature "Patients can register with the site once logged in" do
+  let(:user) { create(:user)}
   before do
+    login_as user
     visit "/"
     click_link "Register as new patient"
   end

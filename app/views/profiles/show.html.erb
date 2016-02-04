@@ -1,0 +1,17 @@
+<header>
+  <h1>Profile</h1>
+  <ul class="actions">
+    <li><%= link_to "Register a new patient", new_patient_path, class: "new" %></li>
+  </ul>
+</header>
+
+<h2>Patients</h2>
+<div id="patients">
+  <% @patients.each do |patient| %>
+      <h2><%= link_to patient.full_name, patient_path(patient) %> </h2>
+      <div id="patient">
+        <%= patient.full_name%></br>
+        <%= patient.contact_phone %></br>
+      </div>
+  <% end %>
+</div>

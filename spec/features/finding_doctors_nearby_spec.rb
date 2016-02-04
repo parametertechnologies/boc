@@ -18,3 +18,14 @@ RSpec.feature "Patients can find doctors nearby" do
     expect(page).to have_css "div[data-doctors_gps='#{doctors_gps}']"
   end
 end
+
+
+# Implementation Notes
+
+# 1. Add attribute Patient#gps to store gps coords of their home location:
+#   '{"lat": 32.234138, "lng": -110.917638}'
+#
+# 2. Add attribute Doctor#gps to store gps coords of where the are currently located:
+#   '[{"lat": 32.236161, "lng": -110.892576},'
+#
+# 3. Will need a service that will update doctor models with their current gps cords

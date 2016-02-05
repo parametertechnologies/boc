@@ -1,4 +1,6 @@
 class PatientsController < ApplicationController
+  before_action :authenticate_user!
+  
   def index
     @patient_gps = '{"lat": 32.234138, "lng": -110.917638}'
     @doctors_gps = '[{"lat": 32.236161, "lng": -110.892576},'

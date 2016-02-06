@@ -3,6 +3,7 @@
   <ul class="actions">
     <% if user_signed_in? %>
       <li><%= link_to "Register as new patient", new_patient_path, class: "new" %></li>
+      <li><%= link_to "Doctors", doctors_path, class: "new" %></li>
     <% end %>
   </ul>
 </header>

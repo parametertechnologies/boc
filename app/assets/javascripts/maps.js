@@ -9,7 +9,6 @@ function initMap() {
     var patient_gps = $("#map").data("patient_gps");
     var doctors_gps = $("#map").data("doctors_gps");
 
-
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 12,
       center: patient_gps

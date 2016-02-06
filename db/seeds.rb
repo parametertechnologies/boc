@@ -16,20 +16,27 @@ user = unless User.exists? email: "patient@boc.com"
 unless Patient.exists? first_name: "Kim"
   Patient.create! first_name: "Kim",
     last_name: "Smith",
-    contact_phone: "928-277-7779",
+    contact_phone: "520-277-7779",
     user: user
 end
 
 unless Patient.exists? first_name: "John"
   Patient.create! first_name: "John",
     last_name: "Smith",
-    contact_phone: "928-277-7779",
+    contact_phone: "520-277-7779",
     user: user
 end
 
 unless Patient.exists? first_name: "Kate"
   Patient.create! first_name: "Kate",
     last_name: "Smith",
-    contact_phone: "928-277-7779",
+    contact_phone: "520-277-7779",
     user: user
+end
+
+unless Doctor.exists? last_name: "Jones"
+  Doctor.create! first_name: "Jane",
+    last_name: "Jones",
+    speciality: "General Practice",
+    contact_phone: "520-277-2222"
 end

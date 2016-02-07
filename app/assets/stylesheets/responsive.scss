@@ -15,8 +15,7 @@
 }
 
 @media(min-width: $screen-xs-min) {
-  input#search {
-    display: inline-block;
+  div#map {
     vertical-align: middle;
     width: auto;
   }

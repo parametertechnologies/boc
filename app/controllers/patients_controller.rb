@@ -7,10 +7,8 @@ class PatientsController < ApplicationController
     else
       @patient_gps = location_not_known
     end
-
-    @doctors_gps = '[{"lat": 32.236161, "lng": -110.892576},'
-    @doctors_gps << '{"lat": 32.228864, "lng": -110.901256},'
-    @doctors_gps << '{"lat": 32.159587, "lng": -111.008552}]'
+    
+    @doctors_gps = Doctor.gps_list
   end
 
   def show

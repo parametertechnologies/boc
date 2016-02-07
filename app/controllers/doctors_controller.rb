@@ -13,6 +13,7 @@ class DoctorsController < ApplicationController
 
   def create
     @doctor = Doctor.new(doctor_params)
+    @doctor.gps = location_not_known #replace with gps service for real-time location
 
     if @doctor.save
       flash[:notice] = 'Doctor registered.'
@@ -32,4 +33,9 @@ class DoctorsController < ApplicationController
       :speciality,
       :contact_phone)
   end
+
+  def location_not_known
+     '{"lat": 32.222605, "lng": -110.974710}'
+  end
+
 end

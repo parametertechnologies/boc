@@ -42,18 +42,37 @@ user2 = unless User.exists? email: "patient2@boc.com"
          User.create! email: "patient2@boc.com", password: "password"
        end
 
-unless Patient.exists? first_name: "John"
-  Patient.create! first_name: "John",
-    last_name: "Thomas",
+unless Patient.exists? first_name: "Frank"
+  Patient.create! first_name: "Frank",
+    last_name: "White",
     contact_phone: "520-377-7777",
     gps: '{"lat": 32.216346, "lng": -111.026269}',
     user: user2
 end
 
 ## Doctor Data ##
-unless Doctor.exists? last_name: "Jones"
-  Doctor.create! first_name: "Jane",
-    last_name: "Jones",
+unless Doctor.exists? last_name: "Smith"
+  Doctor.create! first_name: "Mike",
+    last_name: "Smith",
     speciality: "General Practice",
-    contact_phone: "520-277-2222"
+    contact_phone: "520-234-2242",
+    gps: '{"lat": 32.236161, "lng": -110.892576}'
+end
+
+## Doctor Data ##
+unless Doctor.exists? last_name: "Thomas"
+  Doctor.create! first_name: "Jane",
+    last_name: "Thomas",
+    speciality: "General Practice",
+    contact_phone: "520-477-2122",
+    gps: '{"lat": 32.228864, "lng": -110.901256}'
+end
+
+## Doctor Data ##
+unless Doctor.exists? last_name: "Harris"
+  Doctor.create! first_name: "Fred",
+    last_name: "Harris",
+    speciality: "General Practice",
+    contact_phone: "520-577-2322",
+    gps: '{"lat": 32.159587, "lng": -111.008552}'
 end

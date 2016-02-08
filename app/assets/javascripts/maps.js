@@ -14,6 +14,28 @@ function initMap() {
       center: patient_gps
     });
 
+// Implementation Notes for displaying patient and doctor infowindow's
+//
+// 1. Extract out _patient.html.erb and _doctor.html.erb partials from:
+//  - app/views/patients/show.html.erb
+//  - app/views/doctors/show.html.erb
+//
+// 2. Render partials on to app/views/patients/show.html.erb
+//
+// 3. Add CSS to hide partial content
+//
+// 4. Modify Doctor#gps_list to return :gps & :id from pluck
+//
+// 5. Render into div#map data fields :id and :gps pairs for doctors and patient
+//
+// 6. Maps.js should attach and show partial content on infowindow with click event
+//
+
+
+    var infowindow = new google.maps.InfoWindow({
+      content: $("#patient").html()
+    });
+
     var patient_marker = new google.maps.Marker({
       position: patient_gps,
       icon: {
@@ -24,19 +46,28 @@ function initMap() {
       title: 'Patient'
     });
 
-    patient_marker.setMap(map);
+    patient_marker.addListener('click', function() {
+      infowindow.open(map, patient_marker);
+    });
 
-    var index;
-    for (index = 0; index < doctors_gps.length; ++index) {
+    for (var index = 0; index < doctors_gps.length; ++index) {
+      var selector = "#doctor_" + (index + 1);
+      var content = $(selector).html();
+      var infowindow = new google.maps.InfoWindow();
       var doctor_marker = new google.maps.Marker({
         position: doctors_gps[index],
+        map: map,
         title: 'Doctor'
       });
 
-      doctor_marker.setMap(map);
+      google.maps.event.addListener(doctor_marker,'click',
+        (function(doctor_marker, content, infowindow){
+          return function() {
+            infowindow.setContent(content);
+            infowindow.open(map, doctor_marker);
+          };
+      })(doctor_marker, content, infowindow));
+
     }
-
-
-
   }
 }

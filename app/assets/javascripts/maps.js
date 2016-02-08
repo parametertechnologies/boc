@@ -15,21 +15,10 @@ function initMap() {
     });
 
 // Implementation Notes for displaying patient and doctor infowindow's
+// 1. Modify Doctor#gps_list to return :gps & :id from pluck
 //
-// 1. Extract out _patient.html.erb and _doctor.html.erb partials from:
-//  - app/views/patients/show.html.erb
-//  - app/views/doctors/show.html.erb
-//
-// 2. Render partials on to app/views/patients/show.html.erb
-//
-// 3. Add CSS to hide partial content
-//
-// 4. Modify Doctor#gps_list to return :gps & :id from pluck
-//
-// 5. Render into div#map data fields :id and :gps pairs for doctors and patient
-//
-// 6. Maps.js should attach and show partial content on infowindow with click event
-//
+// 2. Render into div#map data fields :id and :gps pairs for doctors and patient
+
 
 
     var infowindow = new google.maps.InfoWindow({

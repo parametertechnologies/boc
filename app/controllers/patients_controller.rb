@@ -4,11 +4,13 @@ class PatientsController < ApplicationController
   def index
     if user_has_patient?
       @patient_gps = current_user.patients.first.gps
+      @patient = current_user.patients.first
     else
       @patient_gps = location_not_known
     end
-    
+
     @doctors_gps = Doctor.gps_list
+    @doctors = Doctor.all
   end
 
   def show

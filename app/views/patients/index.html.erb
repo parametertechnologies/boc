@@ -11,29 +11,21 @@
 
 <div id="map" data-patient_gps="<%= @patient_gps %>" data-doctors_gps="<%= @doctors_gps %>"></div>
 
-<div id="patient" style="display: none;">
-  <h2><a href="/patients/4">Frank White</a> </h2>
-    Frank White</br>
-    520-377-7777</br>
-</div>
+<% if @patient %>
+  <div id="patient" style="display: none;">
+    <h2><%= link_to @patient.last_name, patient_path(@patient) %></h2>
+      <%= @patient.full_name %></br>
+      <%= @patient.contact_phone %></br>
+  </div>
+<% end %>
 
 <div id="doctors">
-  <div id="doctor_1" style="display: none;">
-    <h2><a href="/doctors/1">Smith</a> </h2>
-    Mike Smith</br>
-    General Practice</br>
-    520-234-2242</br>
-  </div>
-  <div id="doctor_2" style="display: none;">
-    <h2><a href="/doctors/2">Thomas</a> </h2>
-    Jane Thomas</br>
-    General Practice</br>
-    520-477-2122</br>
-  </div>
-  <div id="doctor_3" style="display: none;">
-    <h2><a href="/doctors/3">Harris</a> </h2>
-    Fred Harris</br>
-    General Practice</br>
-    520-577-2322</br>
-  </div>
+  <% @doctors.each do |doctor| %>
+    <div id="doctor_<%= doctor.id %>" style="display: none;">
+      <h2><%= link_to doctor.last_name, doctor_path(doctor) %></h2>
+      <%= doctor.full_name %></br>
+      <%= doctor.speciality %></br>
+      <%= doctor.contact_phone %></br>
+    </div>
+  <% end %>
 </div>

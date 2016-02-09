@@ -29,7 +29,7 @@ class Admin::DoctorsController < AdminController
 
     if @doctor.save
       flash[:notice] = 'Doctor registered.'
-      redirect_to @doctor
+      redirect_to :action => 'show', :id => @doctor.id
     else
       flash[:alert] = 'Doctor not registered.'
       render 'new'

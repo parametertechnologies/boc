@@ -8,8 +8,6 @@ class PatientsController < ApplicationController
     else
       @patient_gps = location_not_known
     end
-
-    @doctors_gps = Doctor.gps_list
     @doctors = Doctor.all
   end
 

@@ -15,7 +15,6 @@ RSpec.feature "Patients can find doctors nearby" do
     visit "/"
     expect(page).to have_selector "div#map"
     expect(page).to have_css "div[data-patient_gps='#{@patient_gps}']"
-    expect(page).to have_css "div[data-doctors_gps='#{@doctors_gps}']"
     expect(page).to have_selector "div#patient", visible: false
     expect(page).to have_selector "div#doctor_#{@doctors[0].id}", visible: false
     expect(page).to have_selector "div#doctor_#{@doctors[1].id}", visible: false

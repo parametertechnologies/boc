@@ -9,7 +9,7 @@
 </header>
 
 
-<div id="map" data-patient_gps="<%= @patient_gps %>" data-doctors_gps="<%= @doctors_gps %>"></div>
+<div id="map" data-patient_gps="<%= @patient_gps %>"></div>
 
 <% if @patient %>
   <div id="patient" style="display: none;">
@@ -22,10 +22,11 @@
 <div id="doctors">
   <% @doctors.each do |doctor| %>
     <div id="doctor_<%= doctor.id %>" style="display: none;">
-      <h2><%= link_to doctor.last_name, doctor_path(doctor) %></h2>
-      <%= doctor.full_name %></br>
-      <%= doctor.speciality %></br>
-      <%= doctor.contact_phone %></br>
+      <h2><%= link_to "Dr. #{doctor.last_name}", doctor_path(doctor) %></h2>
+      <p id="full_name">Dr. <%= doctor.full_name %>, MD</p>
+      <p id="speciality"><%= doctor.speciality %></p>
+      <p id="contact_phone"><%= doctor.contact_phone %></p>
+      <p id="gps" style="display: none;"><%= doctor.gps %></p>
     </div>
   <% end %>
 </div>

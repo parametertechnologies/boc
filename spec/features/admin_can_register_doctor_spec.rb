@@ -4,7 +4,7 @@ RSpec.feature "Admin can register doctors with the site" do
   let(:admin) { create(:admin) }
 
   before do
-    login_as (user, scope: :user)
+    login_as admin
     visit admin_doctors_path
     click_link "Add new doctor"
   end

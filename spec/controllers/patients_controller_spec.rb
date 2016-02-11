@@ -17,9 +17,16 @@ RSpec.describe PatientsController, type: :controller do
   end
 
   describe 'GET new' do
-    it 'assigns @patient' do
+    before do
       get :new
+    end
+
+    it 'assigns @patient' do
       expect(assigns(:patient))
+    end
+
+    it 'assignes @doctors' do
+      expect(assigns(:doctors))
     end
   end
 

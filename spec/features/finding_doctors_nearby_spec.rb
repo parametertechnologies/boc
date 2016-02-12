@@ -15,9 +15,27 @@ RSpec.feature "Patients can find doctors nearby" do
     visit "/"
     expect(page).to have_selector "div#map"
     expect(page).to have_css "div[data-patient_gps='#{@patient_gps}']"
-    expect(page).to have_selector "div#patient", visible: false
-    expect(page).to have_selector "div#doctor_#{@doctors[0].id}", visible: false
-    expect(page).to have_selector "div#doctor_#{@doctors[1].id}", visible: false
-    expect(page).to have_selector "div#doctor_#{@doctors[2].id}", visible: false
+  end
+
+  scenario "hidden data is rendered for map info windows" do
+    visit "/"
+    have_hidden "div#patient"
+    have_hidden "div#patient p#full_name"
+    have_hidden "div#patient p#contact_phone"
+
+    @doctors.each do |doctor|
+      selector = "div#doctor_#{doctor.id}"
+      have_hidden selector
+      have_hidden "#{selector} p#full_name"
+      have_hidden "#{selector} p#speciality"
+      have_hidden "#{selector} p#contact_phone"
+      have_hidden "#{selector} p#gps"
+    end
+  end
+
+  private
+
+  def have_hidden(selector)
+    expect(page).to have_selector selector, visible: false
   end
 end

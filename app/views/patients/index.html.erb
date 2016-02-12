@@ -14,9 +14,18 @@
 <% if @patient %>
   <div id="patient" style="display: none;">
     <h2><%= link_to @patient.last_name, patient_path(@patient) %></h2>
-      <%= @patient.full_name %></br>
-      <%= @patient.contact_phone %></br>
+      <p id="full_name"><%= @patient.full_name %></p>
+      <p id="contact_phone"><%= @patient.contact_phone %></p>
   </div>
+  <% else %>
+    <div id="patient" style="display: none;">
+      <p>
+        To view your location:
+        <%= link_to "Sign in", new_user_session_path %>
+        or
+        <%= link_to "Sign up", new_user_registration_path %>
+      </p>
+    </div>
 <% end %>
 
 <div id="doctors">

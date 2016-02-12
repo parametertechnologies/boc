@@ -1,7 +1,9 @@
 <header>
   <h1>Doctors</h1>
+  <ul class="actions">
+    <li><%= link_to "Add new doctor", new_admin_doctor_path, class: "new" %></li>
+  </ul>
 </header>
-
 
 <div id="doctors">
   <% @doctors.each do |doctor| %>

@@ -76,3 +76,7 @@ unless Doctor.exists? last_name: "Harris"
     contact_phone: "520-577-2322",
     gps: '{"lat": 32.159587, "lng": -111.008552}'
 end
+
+admin = unless User.exists? email: "admin@boc.com"
+         User.create! email: "admin@boc.com", password: "password", admin: true
+       end

@@ -1,7 +1,7 @@
 <header>
   <h1>New Doctor registration</h1>
 </header>
-<%= simple_form_for(@doctor) do |f| %>
+<%= simple_form_for @doctor, :url => url_for(:action => 'create', :controller => 'admin/doctors') do |f| %>
   <%= f.input :first_name %>
   <%= f.input :last_name %>
   <%= f.input :speciality %>

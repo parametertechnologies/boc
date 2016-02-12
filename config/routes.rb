@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "patients#index"
   get 'profile', to: 'profiles#show', as: :profile
+  get 'admin', to: 'admin#index', as: :admin
+  namespace :admin do
+    resources :doctors
+  end
   resources :doctors
   resources :patients
 end

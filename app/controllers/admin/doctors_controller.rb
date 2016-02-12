@@ -1,13 +1,23 @@
-class DoctorsController < ApplicationController
+=begin
+ TODO: 
+ - tried moving common concern methods shared with controllers/doctors_controller
+   into concerns/doctors/controller_concers with no luck
+ - two controllers for doctor seems like a bad thing
+ - need to identify use cases for user, doctor, and admin and determine how to divide
+   these into controller responsibilities
+ DRG 2/6/16
+=end
+class Admin::DoctorsController < AdminController
+
+  # TODO: duplicates controllers/doctors_controller.rb
   def index
     @doctors = Doctor.all.order(:last_name)
   end
 
+  # TODO: duplicates controllers/doctors_controller.rb
   def show
     @doctor = Doctor.find(params[:id])
   end
-
-=begin - moved into admin/doctors_controller.rb
 
   def new
     @doctor = Doctor.new
@@ -19,7 +29,7 @@ class DoctorsController < ApplicationController
 
     if @doctor.save
       flash[:notice] = 'Doctor registered.'
-      redirect_to @doctor
+      redirect_to :action => 'show', :id => @doctor.id
     else
       flash[:alert] = 'Doctor not registered.'
       render 'new'
@@ -35,7 +45,6 @@ class DoctorsController < ApplicationController
       :speciality,
       :contact_phone)
   end
-=end
 
   def location_not_known
      '{"lat": 32.222605, "lng": -110.974710}'

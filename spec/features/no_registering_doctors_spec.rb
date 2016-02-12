@@ -1,10 +1,13 @@
 require "rails_helper"
 
-RSpec.feature "Doctors can register with the site" do
+RSpec.feature "Users cannot" do
   before do
     visit doctors_path
-    click_link "Register as new doctor"
   end
+  scenario 'create a doctor account' do
+    expect(page).not_to have_content "Register as a new doctor"
+  end
+=begin registration moved to admin function for MVP
   scenario "with valid attributes" do
     fill_in "First name", with: "John"
     fill_in "Last name", with: "Smith"
@@ -22,5 +25,5 @@ RSpec.feature "Doctors can register with the site" do
     expect(page).to have_content "can't be blank"
     expect(page).to have_selector "abbr", count: 4
   end
-
+=end
 end

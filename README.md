@@ -42,7 +42,7 @@
     * Uber model - MVP
   * Rating a doctors - MVP
   * Viewing account - MVP
-  * [Search for doctor's in area] (https://github.com/parametertechnologies/boc/issues/3) - MVP 
+  * [Search for doctor's in area] (https://github.com/parametertechnologies/boc/issues/3) - MVP
 3. Admin view
   * Batch doctor registration
 
@@ -51,3 +51,7 @@
 2. Families..people with children
   * registering children and dealing w/ their EHR
 3. Older folks who can not get to doctor easily
+
+## Docs
+
+[2016-02-12-Face-to-Face](https://docs.google.com/document/d/1uI2rLsS30dvrJllbVLolRNy0KdW-hwQFEA6zUyv8vb8/edit?ts=56be8071)
